@@ -1,15 +1,46 @@
+import React from "react";
 import playButton from "../../assets/images/icon-play.svg"
+import "../../css/EntrySubcomponentsStyles/DefinitionHeader.css"
 
-function DefinitionHeader() {
+interface DefinitionHeaderProps {
+  word: string;
+  phonetics: Array<Phonetic>
+}
+
+interface Phonetic {
+  audio : string;
+  text: string;
+}
+
+function DefinitionHeader(props: DefinitionHeaderProps) {
+  const { word, phonetics } = props;
+
+  const firstPhonetic = phonetics[0];
+  const audioRef = React.createRef<HTMLAudioElement>();
+
+  const handlePlay = () => {
+    if(audioRef.current) {
+      audioRef.current.play();
+    }
+  }
+
   return (
     <div className="definition-header">
         <div>
-            <h1>Keyboard</h1>
-            <h2>/'ki:bɔ:d/</h2>
+            <h1>{word}</h1>
+            <h2>{firstPhonetic.text}</h2>
         </div>
-        <button>
-            <img src={playButton} alt="" />
-        </button>
+        {
+          (firstPhonetic.audio !== '')?
+          <button onClick={handlePlay}>
+              <img src={playButton} alt="play" />
+              <audio ref={audioRef}>
+                <source src={firstPhonetic.audio} type="audio/mpeg"/>
+              </audio>
+          </button>
+          :
+          <></>
+        }
     </div>
   )
 }

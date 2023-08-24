@@ -1,0 +1,25 @@
+.definition-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.definition-header button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.definition-header h1 {
+  color: #2D2D2D;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: normal;
+}
+.definition-header h2 {
+  color: #A445ED;
+  font-feature-settings: "clig" off, "liga" off;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/*# sourceMappingURL=DefinitionHeader.css.map */

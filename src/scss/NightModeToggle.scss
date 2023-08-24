@@ -1,0 +1,47 @@
+$light-gray: #757575;
+$purple: #A445ED;
+
+.nightmode-toggle {
+    display: flex;
+
+    
+    .frame {
+        transition: all .4s;
+
+        margin: 0 10px;
+
+        width: 46px;
+        height: 20px;
+        border-radius: 20px;
+
+        position: relative;
+
+        padding: 3px;
+        background-color: $light-gray;
+    }
+
+    .frame:hover {
+        background-color: $purple;
+    }
+
+    .toggle {
+        transition: all .3s ease-out;
+
+        width: 50%;
+        height: 100%;
+        box-sizing: border-box;
+        border-radius: 50%;
+
+        background-color: white;
+
+        position: relative;
+
+        left: 0%;
+    }
+
+    .toggle.active {
+        left: 50%;
+    }
+
+    
+}

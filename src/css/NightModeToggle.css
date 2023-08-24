@@ -1,0 +1,31 @@
+.nightmode-toggle {
+  display: flex;
+}
+.nightmode-toggle .frame {
+  transition: all 0.4s;
+  margin: 0 10px;
+  width: 46px;
+  height: 20px;
+  border-radius: 20px;
+  position: relative;
+  padding: 3px;
+  background-color: #757575;
+}
+.nightmode-toggle .frame:hover {
+  background-color: #A445ED;
+}
+.nightmode-toggle .toggle {
+  transition: all 0.3s ease-out;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-color: white;
+  position: relative;
+  left: 0%;
+}
+.nightmode-toggle .toggle.active {
+  left: 50%;
+}
+
+/*# sourceMappingURL=NightModeToggle.css.map */

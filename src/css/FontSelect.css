@@ -1,0 +1,45 @@
+.font-select {
+  position: relative;
+  user-select: none;
+}
+.font-select span,
+.font-select img {
+  cursor: pointer;
+}
+.font-select img {
+  margin: 0 18px;
+}
+.font-select ul {
+  background-color: white;
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  white-space: nowrap;
+  position: absolute;
+  z-index: 1;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.font-select ul > * + * {
+  margin-block-start: 16px;
+}
+.font-select ul li {
+  cursor: pointer;
+}
+.font-select ul .sans-serif {
+  font-family: "Inter";
+}
+.font-select ul .serif {
+  font-family: "Lora";
+}
+.font-select ul .mono {
+  font-family: "Inconsolate";
+}
+.font-select ul.hidden {
+  display: none;
+}
+
+/*# sourceMappingURL=FontSelect.css.map */

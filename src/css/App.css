@@ -15,5 +15,73 @@
   src: url("../assets/fonts/lora/Lora-Italic-VariableFont_wght.ttf");
   font-style: italic;
 }
+body {
+  padding: 24px;
+}
+
+header > * + * {
+  margin-block-start: 24px;
+  margin-block-end: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controls-holder {
+  display: flex;
+}
+
+#app {
+  font-family: "Inter";
+}
+
+#app.Serif {
+  font-family: "Lora";
+}
+
+#app.Mono {
+  font-family: "Inconsolate";
+}
+
+#search-bar {
+  width: 100%;
+  height: 48px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  padding: 24px;
+  background-color: #F4F4F4;
+  border: none;
+  color: #2D2D2D;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+#search-bar-holder {
+  position: relative;
+}
+#search-bar-holder > button {
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  position: absolute;
+  right: 24px;
+  top: 0;
+  bottom: 0;
+}
+
+#search-bar:focus {
+  outline: none;
+}
+
+@media only screen and (min-width: 1080px) {
+  body {
+    padding: 58px 352px;
+  }
+}
 
 /*# sourceMappingURL=App.css.map */
