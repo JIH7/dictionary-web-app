@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import playButton from "../../assets/images/icon-play.svg"
 import "../../css/EntrySubcomponentsStyles/DefinitionHeader.css"
 
