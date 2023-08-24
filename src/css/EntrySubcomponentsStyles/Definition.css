@@ -12,4 +12,48 @@
   margin-block-start: 13px;
 }
 
+.part-of-speech-holder {
+  display: flex;
+  align-items: center;
+}
+
+.divider {
+  height: 1px;
+  background-color: #3A3A3A;
+  opacity: 15%;
+  margin-top: 3px;
+  margin-left: 16px;
+  flex-grow: 1;
+}
+
+h3 {
+  font-style: italic;
+}
+
+h4 {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #757575;
+}
+
+.synonym-container {
+  display: flex;
+}
+.synonym-container ul {
+  margin-block-start: 20px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.synonym-container ul > * + * {
+  margin-left: 3px;
+}
+.synonym-container ul li {
+  color: #A445ED;
+  font-size: 16px;
+  font-weight: 700;
+}
+
 /*# sourceMappingURL=Definition.css.map */

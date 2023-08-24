@@ -15,8 +15,9 @@ function Definition(props: DefinitionProps) {
 
   return (
     <section className="definition">
-        <div>
+        <div className="part-of-speech-holder">
             <h3>{partOfSpeech}</h3>
+            <div className="divider"></div>
         </div>
         <h4>Meaning</h4>
         <ul className="definitions-list">
@@ -26,15 +27,15 @@ function Definition(props: DefinitionProps) {
               })
             }
         </ul>
-        <div>
+        <div className="synonym-container">
             {
               synonyms.length > 0 ?
               <>
                 <h4>Synonyms</h4>
                 <ul>
                 {
-                  synonyms.map((el) => {
-                    return(<li>{el}</li>)
+                  synonyms.map((el, i) => {
+                    return(<li>{el}{i < synonyms.length - 1 ? "," : ""}</li>)
                   })
                 }
                 </ul>

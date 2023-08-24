@@ -1,4 +1,6 @@
 $purple: #A445ED;
+$medium-gray: #3A3A3A;
+$light-gray: #757575;
 
 .definitions-list {
     list-style: none;
@@ -13,5 +15,54 @@ $purple: #A445ED;
 
     > * + * {
         margin-block-start: 13px;
+    }
+}
+
+.part-of-speech-holder {
+    display: flex;
+    align-items: center;
+}
+
+.divider {
+    height: 1px;
+    background-color: $medium-gray;
+    opacity: 15%;
+    
+    margin-top: 3px;
+    margin-left: 16px;
+    flex-grow: 1;
+}
+
+h3 {
+    font-style: italic;
+}
+
+h4 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: $light-gray;
+}
+
+.synonym-container {
+    display: flex;
+
+
+    ul {
+        margin-block-start: 20px;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+
+        > * + * {
+            margin-left: 3px;
+        }
+
+        li {
+            color: $purple;
+            font-size: 16px;
+            font-weight: 700;
+        }
     }
 }

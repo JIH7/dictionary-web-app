@@ -120,6 +120,44 @@ body.dark {
     box-shadow: 0 0 5px $purple;
 }
 
+article{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    h5 {
+        color: $light-gray;
+        text-decoration: underline;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration-line: underline;
+    }
+
+    a {
+        flex-grow: 0;
+        flex-shrink: 1;
+        text-overflow: ellipsis;
+
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration-line: underline;
+        color: $white;
+    }
+}
+
 @media only screen and (min-width: 768px) {
     
 }

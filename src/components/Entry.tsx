@@ -1,6 +1,8 @@
 import Definition from "./EntrySubcomponents/Definition"
 import DefinitionHeader from "./EntrySubcomponents/DefinitionHeader"
 
+import iconNewWindow from "../assets/images/icon-new-window.svg"
+
 interface EntryProps {
   entryObj: EntryObj;
 }
@@ -11,6 +13,7 @@ interface EntryObj {
   meanings: Array<Meaning>;
   partOfSpeech: string;
   synonyms: Array<string>;
+  sourceUrls: Array<string>;
 }
 
 interface Meaning {
@@ -41,6 +44,15 @@ function Entry(props: EntryProps) {
             return(<Definition partOfSpeech={el.partOfSpeech} definitions={el.definitions} synonyms={el.synonyms} />)
           })
         }
+        <article>
+        {
+          entryObj.sourceUrls.map((el) => {
+            return(<div>
+              <h5>Source:</h5> <a href={el}>{el}<img src={iconNewWindow} alt="new-window" /></a>
+            </div>);
+          })
+        }
+        </article>
     </>
   )
 }
