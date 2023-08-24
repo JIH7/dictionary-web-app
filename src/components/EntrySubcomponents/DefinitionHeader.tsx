@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import playButton from "../../assets/images/icon-play.svg"
 import "../../css/EntrySubcomponentsStyles/DefinitionHeader.css"
 
@@ -16,13 +16,19 @@ function DefinitionHeader(props: DefinitionHeaderProps) {
   const { word, phonetics } = props;
 
   const firstPhonetic = phonetics[0];
-  const audioRef = React.createRef<HTMLAudioElement>();
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   const handlePlay = () => {
     if(audioRef.current) {
       audioRef.current.play();
     }
   }
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.load();
+    }
+  }, [firstPhonetic.audio]);
 
   return (
     <div className="definition-header">

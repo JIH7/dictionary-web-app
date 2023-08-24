@@ -7,11 +7,20 @@ interface EntryProps {
 
 interface EntryObj {
   word: string;
-  definitions: Array<object>;
   phonetics: Array<Phonetic>;
+  meanings: Array<Meaning>;
   partOfSpeech: string;
-  meanings: Array<object>;
   synonyms: Array<string>;
+}
+
+interface Meaning {
+  partOfSpeech: string;
+  definitions: Array<DefinitionObj>;
+  synonyms: Array<string>;
+}
+
+interface DefinitionObj {
+  definition: string;
 }
 
 interface Phonetic {
@@ -19,14 +28,19 @@ interface Phonetic {
   text: string;
 }
 
+
+
 function Entry(props: EntryProps) {
   const { entryObj } = props;
 
   return (
     <>
         <DefinitionHeader word={entryObj.word} phonetics={entryObj.phonetics} />
-        <Definition />
-        <Definition />
+        {
+          entryObj.meanings.map((el) => {
+            return(<Definition partOfSpeech={el.partOfSpeech} definitions={el.definitions} synonyms={el.synonyms} />)
+          })
+        }
     </>
   )
 }
