@@ -30,6 +30,11 @@ $white: #FFFFFF;
 $purple: #A445ED;
 $red: #FF5252;
 
+* {
+    transition: color .32s ease-out;
+    transition: background-color .32s ease-out;
+}
+
 body {
     padding: 24px;
 }
@@ -68,7 +73,6 @@ body.dark {
 
 #app.dark {
     color: white;
-    background-color: $black;
 }
 
 #search-bar {
