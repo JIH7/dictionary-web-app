@@ -3,7 +3,6 @@ import DefinitionHeader from "./EntrySubcomponents/DefinitionHeader"
 
 interface EntryProps {
   entryObj: EntryObj;
-  key: number;
 }
 
 interface EntryObj {
@@ -32,7 +31,7 @@ interface Phonetic {
 
 
 function Entry(props: EntryProps) {
-  const { entryObj, key } = props;
+  const { entryObj } = props;
 
   return (
     <>

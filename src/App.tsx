@@ -72,8 +72,8 @@ function App() {
           (Array.isArray(searchResult) && searchResult.length === 0) ?
           <></>
           :
-          searchResult.map((el, i) => {
-            return(<Entry entryObj={el} key={i}/>);
+          searchResult.map((el) => {
+            return(<Entry entryObj={el}/>);
           })
         }
       </main>
