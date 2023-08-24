@@ -58,7 +58,7 @@ Users should be able to:
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- [W3 Schools how to change bullet color](https://www.w3schools.com/howto/howto_css_bullet_color.asp) - 
 
 ## Author
 

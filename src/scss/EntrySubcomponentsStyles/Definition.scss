@@ -1,0 +1,17 @@
+$purple: #A445ED;
+
+.definitions-list {
+    list-style: none;
+    padding-left: 0;
+
+    li::before {
+        content: "\2022";
+        color: $purple;
+
+        margin-right: 20px;
+    }
+
+    > * + * {
+        margin-block-start: 13px;
+    }
+}

@@ -1,3 +1,5 @@
+import "../../css/EntrySubcomponentsStyles/Definition.css"
+
 interface DefinitionProps {
   partOfSpeech: string;
   definitions: Array<DefinitionObj>;
@@ -12,12 +14,12 @@ function Definition(props: DefinitionProps) {
   const { partOfSpeech, definitions, synonyms } = props;
 
   return (
-    <section>
+    <section className="definition">
         <div>
             <h3>{partOfSpeech}</h3>
         </div>
         <h4>Meaning</h4>
-        <ul>
+        <ul className="definitions-list">
             {
               definitions.map((el) => {
                 return(<li>{el.definition}</li>)

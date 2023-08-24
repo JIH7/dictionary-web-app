@@ -42,4 +42,9 @@
   display: none;
 }
 
+.dark .font-select ul {
+  background-color: #1F1F1F;
+  box-shadow: 0px 5px 30px 0px #A445ED;
+}
+
 /*# sourceMappingURL=FontSelect.css.map */

@@ -1,3 +1,14 @@
+$black: #050505;
+$very-dark-gray: #1F1F1F;
+$dark-gray: #2D2D2D;
+$medium-gray: #3A3A3A;
+$light-gray: #757575;
+$very-light-gray: #E9E9E9;
+$gray-white: #F4F4F4;
+$white: #FFFFFF;
+$purple: #A445ED;
+$red: #FF5252;
+
 .font-select {
     position: relative;
     user-select: none;
@@ -51,5 +62,12 @@
 
     ul.hidden {
         display: none;
+    }
+}
+
+.dark .font-select {
+    ul {
+        background-color: $very-dark-gray;
+        box-shadow: 0px 5px 30px 0px $purple;
     }
 }

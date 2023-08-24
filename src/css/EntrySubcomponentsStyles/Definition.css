@@ -1,0 +1,15 @@
+@charset "UTF-8";
+.definitions-list {
+  list-style: none;
+  padding-left: 0;
+}
+.definitions-list li::before {
+  content: "•";
+  color: #A445ED;
+  margin-right: 20px;
+}
+.definitions-list > * + * {
+  margin-block-start: 13px;
+}
+
+/*# sourceMappingURL=Definition.css.map */
