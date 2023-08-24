@@ -20,19 +20,23 @@ $red: #FF5252;
 
         cursor: pointer;
     }
+}
 
-    h1 {
-        color: $dark-gray;
-        font-size: 32px;
-        font-weight: 700;
-        line-height: normal;
-    }
+h1 {
+    color: $dark-gray;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: normal;
+}
 
-    h2 {
-        color: $purple;
-        font-feature-settings: 'clig' off, 'liga' off;
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 24px;
-    }
+.dark h1 {
+    color: white;
+}
+
+h2 {
+    color: $purple;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
 }

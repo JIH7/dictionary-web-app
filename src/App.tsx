@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import logo from "./assets/images/logo.svg"
 import searchIcon from "./assets/images/icon-search.svg"
@@ -14,6 +14,15 @@ function App() {
 
   const [currentFont, setCurrentFont] = useState("Sans Serif");
   const [nightMode, setNightMode] = useState(false);
+
+  useEffect(() => {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setNightMode(prefersDark);
+  }, []);
+
+  useEffect(() => {
+    document.body.className = nightMode ? 'dark' : '';
+  }, [nightMode]);
 
   const nightModeToggle = () => {
     setNightMode(!nightMode);
@@ -37,7 +46,7 @@ function App() {
   }
 
   return (
-    <div id="app" className={currentFont === "Sans Serif" ? "Sans-Serif" : currentFont}>
+    <div id="app" className={`${currentFont === "Sans Serif" ? "Sans-Serif" : currentFont} ${nightMode ? "dark" : ""}`}>
       <header>
         <nav>
           <img src={logo} alt="logo" />
@@ -64,7 +73,7 @@ function App() {
           <></>
           :
           searchResult.map((el, i) => {
-            return(<Entry entryObj={el}/>);
+            return(<Entry entryObj={el} key={i}/>);
           })
         }
       </main>
