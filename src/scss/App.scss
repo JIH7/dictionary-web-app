@@ -44,6 +44,14 @@ header > * + * {
     margin-block-end: 0;
 }
 
+.divider-vertical {
+    width: 2px;
+    height: 24px;
+    opacity: 15%;
+    background-color: $medium-gray;
+    z-index: 1;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -127,11 +135,12 @@ article{
 
     > div {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
 
         width: 100%;
         box-sizing: border-box;
+        flex-direction: column;
     }
 
     h5 {
@@ -159,7 +168,25 @@ article{
 }
 
 @media only screen and (min-width: 768px) {
-    
+    body {
+        padding: 40px;
+    }
+
+    article {
+        > div {
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        h5 {
+            text-decoration: none;
+        }
+
+        a {
+            margin-left: 21px;
+        }
+    }
 }
 
 @media only screen and (min-width: 1080px) {

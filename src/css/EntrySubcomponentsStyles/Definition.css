@@ -46,6 +46,7 @@ h4 {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 .synonym-container ul > * + * {
   margin-left: 3px;

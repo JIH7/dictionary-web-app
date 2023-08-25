@@ -7,10 +7,13 @@ import "./css/App.css"
 import FontSelect from './components/FontSelect'
 import Entry from './components/Entry'
 import NightModeToggle from "./components/NightModeToggle"
+import NoDefinitions from "./components/NoDefinitions"
 
 function App() {
   const [searchValue, setSearchValue] = useState("");
-  const [searchResult, setSearchResult] = useState([])
+  const [searchResult, setSearchResult] = useState([]);
+
+  const [errorMsg, setErrorMsg] = useState("");
 
   const [currentFont, setCurrentFont] = useState("Sans Serif");
   const [nightMode, setNightMode] = useState(false);
@@ -29,14 +32,21 @@ function App() {
   }
 
   const fetchEntry = async () => {
-    if(searchValue === "")
+    if(searchValue === "") {
+      setErrorMsg("Whoops, can't be empty...")
       return;
+    }
 
     const res = await fetch("https://api.dictionaryapi.dev/api/v2/entries/en/" + searchValue);
     const data = await res.json();
+
+    if (data.title === "No Definitions Found" || !data) {
+      setErrorMsg("no defs");
+      return;
+    }
+
+    setErrorMsg("");
     setSearchResult(data);
-    console.log(data);
-    console.log(searchResult)
   }
 
   const handleKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -52,6 +62,7 @@ function App() {
           <img src={logo} alt="logo" />
           <div className="controls-holder">
             <FontSelect currentFont={currentFont} setCurrentFont={setCurrentFont} />
+            <div className="divider-vertical"></div>
             <NightModeToggle nightMode={nightMode} setNightMode={nightModeToggle} />
           </div>
         </nav>
@@ -70,7 +81,25 @@ function App() {
       <main>
         {
           (Array.isArray(searchResult) && searchResult.length === 0) ?
-          <></>
+          <>
+            {
+              errorMsg === "" ?
+              <></>
+              :
+              <>
+                {
+                  errorMsg === "no defs" ?
+                  <>
+                    <NoDefinitions />
+                  </>
+                  :
+                  <>
+                    <p className="error-text">{errorMsg}</p>
+                  </>
+                }
+              </>
+            }
+          </>
           :
           searchResult.map((el) => {
             return(<Entry entryObj={el}/>);
