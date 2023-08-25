@@ -32,6 +32,8 @@ function App() {
   }
 
   const fetchEntry = async () => {
+    setSearchResult([]);
+
     if(searchValue === "") {
       setErrorMsg("Whoops, can't be empty...")
       return;
@@ -69,6 +71,7 @@ function App() {
         <div id="search-bar-holder">
           <input
           id='search-bar'
+          className={errorMsg === "Whoops, can't be empty..." ? "search-err" : ""}
           placeholder="Search for any word..." 
           type="text"
           onKeyUp={handleKeyUp}
