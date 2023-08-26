@@ -4,6 +4,7 @@ interface DefinitionProps {
   partOfSpeech: string;
   definitions: Array<DefinitionObj>;
   synonyms: Array<string>;
+  searchSynonym: Function;
 }
 
 interface DefinitionObj {
@@ -11,7 +12,7 @@ interface DefinitionObj {
 }
 
 function Definition(props: DefinitionProps) {
-  const { partOfSpeech, definitions, synonyms } = props;
+  const { partOfSpeech, definitions, synonyms, searchSynonym } = props;
 
   return (
     <section className="definition">
@@ -35,7 +36,7 @@ function Definition(props: DefinitionProps) {
                 <ul>
                 {
                   synonyms.map((el, i) => {
-                    return(<li>{el}{i < synonyms.length - 1 ? "," : ""}</li>)
+                    return(<li onClick={() => searchSynonym(el)}>{el}{i < synonyms.length - 1 ? "," : ""}</li>)
                   })
                 }
                 </ul>

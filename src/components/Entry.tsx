@@ -5,6 +5,7 @@ import iconNewWindow from "../assets/images/icon-new-window.svg"
 
 interface EntryProps {
   entryObj: EntryObj;
+  searchSynonym: Function;
 }
 
 interface EntryObj {
@@ -34,14 +35,17 @@ interface Phonetic {
 
 
 function Entry(props: EntryProps) {
-  const { entryObj } = props;
+  const { entryObj, searchSynonym } = props;
 
   return (
     <>
         <DefinitionHeader word={entryObj.word} phonetics={entryObj.phonetics} />
         {
           entryObj.meanings.map((el) => {
-            return(<Definition partOfSpeech={el.partOfSpeech} definitions={el.definitions} synonyms={el.synonyms} />)
+            return(<Definition partOfSpeech={el.partOfSpeech}
+              definitions={el.definitions}
+              synonyms={el.synonyms}
+              searchSynonym={searchSynonym} />)
           })
         }
         <article>

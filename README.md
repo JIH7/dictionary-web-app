@@ -39,7 +39,7 @@ Users are able to:
 
 ### Links
 
-- [Solution URL](https://your-solution-url.com)
+- [Solution URL](https://www.frontendmentor.io/solutions/dictionary-app-using-typescript-react-scss-iQkZBFt2dZ)
 - [Live Site URL](https://helsel-dictionary-app.netlify.app/)
 
 ## My process

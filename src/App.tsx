@@ -51,6 +51,11 @@ function App() {
     setSearchResult(data);
   }
 
+  const searchSynonym = (word: string) => {
+    setSearchValue(word);
+    fetchEntry();
+  }
+
   const handleKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
       fetchEntry();
@@ -75,6 +80,7 @@ function App() {
           placeholder="Search for any word..." 
           type="text"
           onKeyUp={handleKeyUp}
+          value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)} />
           <button>
             <img onClick={() => fetchEntry()} src={searchIcon} alt="search" />
@@ -105,7 +111,9 @@ function App() {
           </>
           :
           searchResult.map((el) => {
-            return(<Entry entryObj={el}/>);
+            return(<Entry
+              entryObj={el}
+              searchSynonym={searchSynonym}/>);
           })
         }
       </main>
